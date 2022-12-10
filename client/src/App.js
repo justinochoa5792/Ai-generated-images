@@ -7,7 +7,6 @@ function App() {
   const [size, setSize] = useState("small");
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,17 +79,7 @@ function App() {
                 <option value="large">Large</option>
               </select>
             </div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn"
-              onClick={() => {
-                setLoading(true);
-              }}
-            >
-              {loading && (
-                <FontAwesomeIcon className="spinner" icon={faSpinner} />
-              )}
+            <button type="submit" className="btn">
               Generate
             </button>
           </form>
